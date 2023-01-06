@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const Homepage: React.FC<{path: string}> = ({path = '/'}) => {
-  const [data, setData] = React.useState(null);
-  const [error, setError] = React.useState('');
-  const [isLoading, setLoading] = React.useState(false)
+  const [data, setData] = useState(null);
+  const [error, setError] = useState('');
+  const [isLoading, setLoading] = useState(false)
 
   useEffect(() => {
     setLoading(true);

@@ -1,7 +1,7 @@
-const filenames = require("./utils/filenames");
+const filenames = require("../utils/filenames");
 const path = require("path");
-const commonPaths = require("./commonPaths");
-const mainRules = require("./additionally/rules");
+const commonPaths = require("../commonPaths");
+const mainRules = require("../additionally/rules");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
@@ -15,11 +15,11 @@ const ModuleFederationConfig = require('./module-federation');
 const prodConfig = {
     mode: 'production',
     entry: {
-        main: path.resolve(commonPaths.projectRoot, './src/index.tsx'),
+        main: path.resolve(__dirname, '../../src/index.tsx'),
     },
     output: {
         filename: filenames.filenameWithContentHash('[name]', 'js'),
-        path: path.resolve(commonPaths.projectRoot, './dist'),
+        path: path.resolve(__dirname, '../../dist'),
         publicPath: 'http://localhost:8080/',
         clean: true,
     },
