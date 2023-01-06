@@ -53,16 +53,16 @@ module.exports = {
             exposes: {
                 './Homepage': path.resolve(__dirname, '../../src/Homepage.tsx'),
             },
-            // shared: {
-            //     react: {
-            //         singleton: true,
-            //         requiredVersion: dependencies['react'],
-            //     },
-            //     'react-dom': {
-            //         singleton: true,
-            //         requiredVersion: dependencies['react-dom'],
-            //     }
-            // }
+            shared: {
+                react: {
+                    singleton: true,
+                    requiredVersion: dependencies['react'],
+                },
+                'react-dom': {
+                    singleton: true,
+                    requiredVersion: dependencies['react-dom'],
+                }
+            }
         }),
         new StreamingTargetPlugin({
             name: 'homePage',
